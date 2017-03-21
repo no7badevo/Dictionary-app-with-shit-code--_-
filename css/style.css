@@ -47,6 +47,7 @@ html, body {
 }
 
 input[type='button'] {
+    display: inline-block;
     position: relative;
     border: none;
     outline: none;
