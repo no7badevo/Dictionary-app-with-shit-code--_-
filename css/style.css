@@ -14,10 +14,12 @@
     font-size: 1em;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     height: 100%;
-    background: url(../icons/noisy_net.png);
+    background: url(../icons/argyle.png) center;
+    overflow: hidden;
 }
 
 .container {
@@ -30,7 +32,7 @@ html, body {
     display: none;
 }
 
-.search { 
+.search {
     position: relative;
     width: inherit;
     height: 45px;
@@ -39,11 +41,11 @@ html, body {
     outline: none;
     text-indent: 10px;
     border-radius: 5px;
-    background: url(../icons/searching-tool.png) no-repeat rgba(255,255,255,.2);
+    background: url(../icons/searching-tool.png) no-repeat rgba(255, 255, 255, .25);
     background-position: 98% 6px;
     color: #fff;
     padding: 5px;
-    box-shadow: 0 0 2px 3px rgba(255,255,255,.4);
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, .4);
 }
 
 input[type='button'] {
@@ -54,33 +56,44 @@ input[type='button'] {
     width: 225px;
     margin-left: 9px;
     height: 40px;
+    padding-right: 38px;
     line-height: 40px;
-    text-align: center;
-    border-radius: 15px;
-    background: rgba(255,255,255,.2);
+    border-radius: 6px;
+    background: url(../icons/thin-arrowheads-pointing-down.png) right no-repeat rgba(255, 255, 255, .2);
+    background-position: 185px 11px;
     color: #fff;
     top: 25px;
     font-weight: bold;
     font-size: 1.05em;
     cursor: pointer;
-    box-shadow: 0 0 2px 3px rgba(255,255,255,.4);
+    box-shadow: 0 0 1px 2px rgba(255, 255, 255, .4);
 }
 
-input[type='button']:hover {
-    background: rgba(255,255,255,.3);
-    text-shadow: 0 4px 14px rgba(0,0,0,.8);
-    transition: background .2s ease-in-out;
+@keyframes topDown {
+    0% {   background-position: 185px 11px;  transition: all 1s linear;}
+    50% {  background-position: 185px 16px; transition: all 1s linear;}
+    100% { background-position: 185px 11px;  transition: all 1s linear;}
 }
 
-input[type='button']:active { top: 26px; }
+.lang:hover {
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, .4);
+    animation: topDown .8s infinite;
+}
+
+input[type='button']:active {
+    top: 26px;
+}
 
 h1 {
     text-align: center;
     margin-top: 10px;
     color: #fff;
-    text-transform: uppercase;
-    text-shadow: 0 2px 9px rgba(255,255,255,.4);
+    text-transform: capitalize;
+    text-shadow: 0 2px 9px rgba(255, 255, 255, .4);
     font-size: 1.6em;
+    background: url(../icons/3d-dictionary.png) center no-repeat;
+    background-position: 225px 0;
+    padding-left: 30px;
 }
 
 .translate {
@@ -94,17 +107,21 @@ h1 {
 #translate {
     display: block;
     margin: 0 auto;
-    background: url(../icons/arrow-pointing-down.png) no-repeat rgba(255,255,255,.2);
+    background: url(../icons/arrow-pointing-down.png) no-repeat rgba(255, 255, 255, .2);
     background-position: 95% 7px;
 }
 
+#translate:hover {
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, .4);
+    transition: box-shadow .3s;
+}
 
 #word {
     margin-top: 40px;
     height: 120px;
-    background: rgba(255,255,255,.12);
+    background: rgba(255, 255, 255, .2);
     border-radius: 10px;
-    box-shadow: 0 0 2px 3px rgba(255,255,255,.4);
+    box-shadow: 0 0 2px 3px rgba(255, 255, 255, .4);
     padding-top: 25px;
     padding-left: 30px;
     font-size: 1.16em;
@@ -112,9 +129,10 @@ h1 {
     font-weight: 700;
 }
 
+
 /****** jQuery Autocomplete CSS *************/
 
- .ui-corner-all {
+.ui-corner-all {
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -128,7 +146,7 @@ h1 {
     max-height: 150px;
     overflow-y: scroll;
     border-radius: 5px;
-    background: rgba(255,255,255,.3);
+    background: rgba(255, 255, 255, .3);
 }
 
 .ui-menu .ui-menu-item {
@@ -148,14 +166,14 @@ h1 {
     background-image: none;
 }
 
-.ui-widget-content .ui-state-hover, .ui-widget-content .ui-state-focus {
+.ui-widget-content .ui-state-hover,
+.ui-widget-content .ui-state-focus {
     border: 1px solid lightgray;
     background-image: none;
     background-color: lightgray;
     font-weight: bold;
     color: #fff;
 }
-
 
 .ui-helper-hidden-accessible {
     display: none !important;
